@@ -17,33 +17,13 @@ CREATE TABLE students (
         FOREIGN KEY (class_id)
         REFERENCES classes(class_id)
 );
-<<<<<<< HEAD
 
-=======
->>>>>>> a9cf0ee (Create students table and basic operations)
+
 -- ========================================
 -- Student Management Module
 -- Database Schema and Operations
 -- ========================================
 
--- Table: students
--- Description: Stores basic information about students
-CREATE TABLE students (
-    student_id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    date_of_birth DATE,
-    gender ENUM('Male', 'Female'),
-    class_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_student_class
-        FOREIGN KEY (class_id)
-        REFERENCES classes(class_id)
-);
-<<<<<<< HEAD
-
-=======
->>>>>>> a9cf0ee (Create students table and basic operations)
 --إضافة طالب
 INSERT INTO students (first_name, last_name, date_of_birth, gender, class_id)
 VALUES ('Sara', 'Mohammad', '2011-03-15', 'Female', 1);
@@ -67,6 +47,7 @@ LEFT JOIN classes c
 ON s.class_id = c.class_id;
 
 
+<<<<<<< HEAD
 
 -- End of Student Management Module
 
@@ -101,3 +82,7 @@ ON s.class_id = c.class_id;
 -- ========================================
 =======
 >>>>>>> a9cf0ee (Create students table and basic operations)
+=======
+-- End of Student Management Module
+-- ========================================
+>>>>>>> 71d8f03 (Added student module functionality)
