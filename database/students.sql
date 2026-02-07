@@ -38,3 +38,7 @@ SELECT s.student_id,
 FROM students s
 LEFT JOIN classes c
 ON s.class_id = c.class_id;
+
+
+-- End of Student Management Module
+-- ========================================
