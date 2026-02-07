@@ -17,6 +17,7 @@ CREATE TABLE students (
         FOREIGN KEY (class_id)
         REFERENCES classes(class_id)
 );
+
 --إضافة طالب
 INSERT INTO students (first_name, last_name, date_of_birth, gender, class_id)
 VALUES ('Sara', 'Mohammad', '2011-03-15', 'Female', 1);
@@ -38,7 +39,6 @@ SELECT s.student_id,
 FROM students s
 LEFT JOIN classes c
 ON s.class_id = c.class_id;
-
 
 -- End of Student Management Module
 -- ========================================
