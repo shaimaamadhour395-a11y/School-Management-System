@@ -1,57 +1,26 @@
-# Classes, Attendance & Grades Module
-**Aya abd ullatif – School Management System (Mini SMS)**
+# وحدة قاعدة البيانات الخاصة ب الطلاب :
 
-> هذه الوثيقة توضح إنجازات وحدة **الصفوف، الحضور، والدرجات** بشكل عملي، مع تعريف الجداول (MySQL)، ومسؤوليات الوحدة، وبنية الملفات، وأوامر التشغيل، وتقارير SQL، وروابط التكامل مع بقية الوحدات.
+This folder contains the database schema and SQL scripts related to the **Student Module**
+of the School Management System.
 
----
+## 📁 الملفات :
+- `students.sql`  
+  Contains the SQL code to create the `students` table and perform basic CRUD operations
+  (Create, Read, Update, Delete).
 
-## 🎯 مسؤوليات الوحدة (Scope)
-- **Classes**: إضافة/تعديل/حذف/عرض الصفوف.
-- **Attendance**: تسجيل حضور الطلاب، تعديل/حذف السجلات، عرض قوائم الحضور بفلاتر (طالب/صف/فترة/حالة).
-- **Grades**: إدخال درجات الطالب لكل مادة وتيرم، تعديل/حذف السجلات، عرض القوائم بفلاتر.
-- **تقارير**:
-  - ملخص حضور صف ضمن فترة.
-  - كشف درجات طالب (تفاصيل + متوسطات لكل مادة).
+## 🗄️ جداول / الطلاب :
+The `students` table stores essential information about students.
 
-> **ملاحظة**: السكربتات في هذه الوحدة **تولّد وتطبع SQL** فقط (بدون تنفيذ فعلي على DB)، لضمان توافق أسلوب العمل الأكاديمي مع بقية الوحدات.
+### الاعمدة:
+- `student_id` – Unique identifier for each student
+- `first_name` – Student's first name
+- `last_name` – Student's last name
+- `date_of_birth` – Date of birth
+- `gender` – Gender of the student
+- `class_id` – Reference to the class the student belongs to
+- `created_at` – Record creation timestamp
 
----
+## ⚙️ الاستخدام
+Run the `students.sql` file using your SQL database system (e.g., MySQL) to create the table
+and test the provided queries.
 
-📂 الملفات الرئيسية
-Classes
-
-add_class.py → إنشاء صف
-update_class.py → تعديل صف
-delete_class.py → حذف صف
-list_classes.py → عرض الصفوف مع عدد الطلاب
-
-Attendance
-
-add_attendance.py → تسجيل حضور
-update_attendance.py → تعديل حضور
-delete_attendance.py → حذف حضور
-list_attendance.py → عرض الحضور بفلاتر (طالب/صف/فترة/حالة)
-
-Grades
-
-add_grade.py → إضافة درجة
-update_grade.py → تعديل درجة
-delete_grade.py → حذف درجة
-list_grades.py → عرض الدرجات بفلاتر (طالب/مادة/تيرم)
-
-Reports
-
-attendance_summary.sql → تقرير حضور صف
-grades_report.sql → تقرير درجات طالب
-show_attendance_report.py & show_grades_report.py → طباعة SQL الجاهز للتنفيذ
-
-
-🧱 الجداول المستخدمة (MySQL)
-classes
-SQLclass_id INT AUTO_INCREMENT PRIMARY KEYclass_name VARCHAR(100) UNIQUEcapacity INTإظهار المزيد من الخطوط
-attendance
-يرتبط بـ: students.student_id و classes.class_id
-ويمنع التكرار لنفس (student, class, date).
-grades
-يرتبط بـ: students.student_id و subjects.subject_id
-ويمنع التكرار لنفس (student, subject, term).
