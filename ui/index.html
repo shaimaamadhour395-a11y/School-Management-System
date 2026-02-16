@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini School Management System</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            opacity: 0;
+            animation: fadeInPage 1s ease forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1e3c72;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(to right, #2a5298, #1e3c72);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideDown 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideDown {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* About */
+        .about {
+            padding: 40px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInSection 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInSection {
+            to { opacity: 1; }
+        }
+
+        .about h2 {
+            color: #1e3c72;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Modules */
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            width: 260px;
+            padding: 20px;
+            margin: 15px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: cardAppear 0.8s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 1.5s; }
+        .card:nth-child(2) { animation-delay: 1.8s; }
+        .card:nth-child(3) { animation-delay: 2.1s; }
+
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #1e3c72;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background-color: #2a5298;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #16325c;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeInSection 1s ease forwards;
+            animation-delay: 2.5s;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        Mini School Management System
+    </div>
+
+    <div class="hero">
+        <h1>Integration, UI & Documentation</h1>
+        <p>A complete database-based school management project</p>
+    </div>
+
+    <div class="about">
+        <h2>About the Project</h2>
+        <p>
+            This system integrates multiple database modules including Student Management,
+            Teacher & Subject Management, and Class, Attendance & Grades.
+            All modules were developed separately using Git feature branches
+            and then merged into one unified system.
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>Student Module</h3>
+            <p>Manage students and class assignments</p>
+            <button onclick="alert('Student Module')">View</button>
+        </div>
+
+        <div class="card">
+            <h3>Teacher & Subject Module</h3>
+            <p>Manage teachers and subjects</p>
+            <button onclick="alert('Teacher & Subject Module')">View</button>
+        </div>
+
+        <div class="card">
+            <h3>Attendance & Grades</h3>
+            <p>Track attendance and record grades</p>
+            <button onclick="alert('Attendance & Grades Module')">View</button>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p><strong>Project Team</strong></p>
+        <p>Student 1 – Student Module</p>
+        <p>Student 2 – Teacher & Subject Module</p>
+        <p>Student 3 – Class, Attendance & Grades</p>
+        <p>Student 4 – Integration, UI & Documentation</p>
+    </div>
+
+</body>
+</html>
