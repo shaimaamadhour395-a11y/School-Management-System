@@ -55,7 +55,12 @@ attendance
 grades
 يرتبط بـ: students.student_id و subjects.subject_id
 ويمنع التكرار لنفس (student, subject, term).
+ feature/teacher-subject-module
 
 ## KAN-2 Teacher & Subject Module
 
 This branch contains implementation for Teacher and Subject Management.
+## KAN-1 Student Module
+
+This branch contains implementation for the Student Management Module.
+ main
