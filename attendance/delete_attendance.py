@@ -1,21 +1,34 @@
-# attendance/list_attendance.py
+# attendance/delete_attendance.py
 
 from database.db import get_connection
 
-def list_attendance():
-    conn = get_connection()
-    cursor = conn.cursor()
+def delete_attendance(attendance_id):
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM attendance")
-    rows = cursor.fetchall()
+        cursor.execute(
+            "DELETE FROM attendance WHERE id = ?",
+            (attendance_id,)
+        )
 
-    for row in rows:
-        print(dict(row))  
+        conn.commit()
 
-    conn.close()
+        if cursor.rowcount == 0:
+            print("No attendance record found with this ID.")
+        else:
+            print("Attendance deleted successfully.")
+
+    except Exception as e:
+        print("Error:", e)
+
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
-    list_attendance()
+    delete_attendance(1)
+
 
   
+
