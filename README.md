@@ -1,6 +1,6 @@
-
 # Mini School Management System (Mini SMS)
-#الهدف:
+
+## الهدف
 نظام مصغر لكنه واقعي ومتكامل لإدارة:
 - الطلاب
 - المعلمين
@@ -11,7 +11,7 @@
 
 ---
 
-## 👨‍لالب 1: Student Management Module
+## 👨‍💻 الطالب 1: Student Management Module
 (وحدة إدارة الطلاب)
 
 ### ما ينفذه فعليًا:
@@ -60,6 +60,42 @@
 
 ---
 
+## 📁 تفاصيل قاعدة بيانات Teacher & Subject Module
+
+This folder contains the database schema and SQL scripts related to the Teacher & Subject Module.
+
+### الملفات
+
+- `teachers.sql`  
+  Contains the SQL code to create the teachers table and perform basic CRUD operations.
+
+- `subjects.sql`  
+  Contains the SQL code to create the subjects table and perform basic CRUD operations.
+
+- `teacher_subjects.sql`  
+  Contains the SQL code to link teachers with subjects.
+
+### الجداول
+
+#### teachers
+- teacher_id – Unique identifier for each teacher
+- first_name – Teacher's first name
+- last_name – Teacher's last name
+- email – Teacher's email
+- created_at – Record creation timestamp
+
+#### subjects
+- subject_id – Unique identifier for each subject
+- subject_name – Name of the subject
+- created_at – Record creation timestamp
+
+#### teacher_subjects
+- id – Unique identifier
+- teacher_id – Reference to teachers table
+- subject_id – Reference to subjects table
+
+---
+
 ## 👨‍💻 الطالب 3: Class, Attendance & Grades Module
 (الصفوف، الحضور، الدرجات)
 
@@ -72,52 +108,79 @@
 ### قاعدة البيانات:
 - الجداول: `classes`, `attendance`, `grades`
 
-### Git / Jira:
-- Branch: `feature/class-attendance-grades`
-- Commits واضحة
-- Jira Tasks منفصلة
-
 ### الملفات:
-- `attendance/`  
-  - `add_attendance.py`, `delete_attendance.py`, `list_attendance.py`, `update_attendance.py`
-- `classes/`  
-  - `add_class.py`, `delete_class.py`, `list_classes.py`, `update_class.py`
-- `grades/`  
-  - `add_grade.py`, `delete_gardes.py`, `list_grades.py`, `update_grade.py`
-- `reports/`  
-  - `attendance_summary.sql`, `grades_report.sql`, `show_attendance_report.py`, `show_grades_report.py`
-- `database/`  
-  - `attendance.sql`, `classes.sql`, `grades.sql`, `subjects.sql`, `db.py`, `README.md`
-- `sms.db`
+
+attendance/
+- add_attendance.py
+- delete_attendance.py
+- list_attendance.py
+- update_attendance.py
+
+classes/
+- add_class.py
+- delete_class.py
+- list_classes.py
+- update_class.py
+
+grades/
+- add_grade.py
+- delete_gardes.py
+- list_grades.py
+- update_grade.py
+
+reports/
+- attendance_summary.sql
+- grades_report.sql
+- show_attendance_report.py
+- show_grades_report.py
+
+database/
+- attendance.sql
+- classes.sql
+- grades.sql
+- subjects.sql
+- db.py
 
 ---
 
 ## 👨‍💻 الطالب 4: Integration, UI & Documentation
-(الدمج، الواجهة، التوثيق)
 
 ### ما ينفذه فعليًا:
-- دمج جميع الـ Modules
-- واجهة: CLI أو Web بسيطة
-- كتابة README.md نهائي
-- توثيق النظام:
-  - Screenshots من Jira و GitHub
-  - ER Diagram لقواعد البيانات
-
-### Git / Jira:
-- Branch: `feature/ui-docs`
-- Pull Requests
-- Documentation كاملة
+- دمج جميع Modules
+- واجهة بسيطة
+- كتابة README النهائي
+- توثيق المشروع
+- ER Diagram
+- Screenshots من GitHub و Jira
 
 ---
 
-## **استخدام المشروع**
-1. افتح أي نظام إدارة قواعد بيانات (MySQL, SQL Server أو أي DBMS مناسب).
-2. شغّل ملفات `.sql` حسب ترتيب الجداول:
-   - `students.sql` → `teachers.sql` → `subjects.sql` → `teacher_subjects.sql` → `classes.sql` → `attendance.sql` → `grades.sql`
-3. تأكد من الربط الصحيح بين الجداول عند الاختبارات.
-4. كل ملفات المشروع موجودة على GitHub ضمن البرانش `feature/integration-ui-docs`.
-5. يمكن تشغيل السكريبتات Python حسب المجلدات لتجربة إضافة/تعديل/حذف/عرض البيانات.
+## طريقة تشغيل المشروع
+
+1. افتح نظام إدارة قواعد البيانات مثل MySQL أو SQL Server
+2. شغل ملفات SQL بالترتيب:
+
+students.sql  
+teachers.sql  
+subjects.sql  
+teacher_subjects.sql  
+classes.sql  
+attendance.sql  
+grades.sql  
+
+3. تأكد من إنشاء الجداول بنجاح
+
+4. شغل سكربتات Python من المجلدات:
+
+attendance  
+classes  
+grades  
+reports  
 
 ---
 
->>>>>>> 0ac5864 (Add final README with all students' modules)
+## Repository
+
+جميع ملفات المشروع موجودة في GitHub Repository.
+
+---
