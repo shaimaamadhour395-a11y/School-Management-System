@@ -18,13 +18,12 @@ CREATE TABLE students (
         REFERENCES classes(class_id)
 );
 
-
 -- ========================================
 -- Student Management Module
 -- Database Schema and Operations
 -- ========================================
 
---إضافة طالب
+-- إضافة طالب
 INSERT INTO students (first_name, last_name, date_of_birth, gender, class_id)
 VALUES ('Sara', 'Mohammad', '2011-03-15', 'Female', 1);
 
@@ -46,43 +45,5 @@ FROM students s
 LEFT JOIN classes c
 ON s.class_id = c.class_id;
 
-
-<<<<<<< HEAD
-
--- End of Student Management Module
-
-
-
-^G Help       ^O Write Out  ^F Where Is   ^K Cut        ^T Execute    ^C Location   M-U Undo
-^X Exit       ^R Read File  ^\ Replace    ^U Paste      ^J Justify    ^/ Go To Line M-E Redo--إضافة طالب
-INSERT INTO students (first_name, last_name, date_of_birth, gender, class_id)
-VALUES ('Sara', 'Mohammad', '2011-03-15', 'Female', 1);
-
--- إضافة معلومات الطالب
-UPDATE students
-SET class_id = 2
-WHERE student_id = 1;
-
--- حذف الطالب
-DELETE FROM students
-WHERE student_id = 1;
-
--- استرجاع الطلاب مع فصولهم
-SELECT s.student_id,
-       s.first_name,
-       s.last_name,
-       c.class_name
-FROM students s
-LEFT JOIN classes c
-ON s.class_id = c.class_id;
-<<<<<<< HEAD
-
-
 -- End of Student Management Module
 -- ========================================
-=======
->>>>>>> a9cf0ee (Create students table and basic operations)
-=======
--- End of Student Management Module
--- ========================================
->>>>>>> 71d8f03 (Added student module functionality)
