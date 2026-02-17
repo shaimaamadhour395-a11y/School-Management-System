@@ -187,18 +187,26 @@ reports
 
 
 
+---
+
 ## 📸 Screenshots
 
-### 📊 Grades Report
-![Grades Report](screenshots/grades_report.png)
+### 📋 Kanban Board (Jira)
+![Kanban Board](screenshots/Kanban%20Board.jpeg)
 
 ---
 
-### 📅 Attendance Report
-![Attendance Report](screenshots/attendance_report.png)
+### 🌿 Git Branches
+![Branches](screenshots/branches.jpeg)
 
 ---
 
-### 🗄 Database Tables
-![Database Tables](screenshots/database_tables.png)
+### 💻 Project Code Structure
+![Code](screenshots/code.jpeg)
+
+---
+
+### 🔀 Pull Request
+![Pull Request](screenshots/pull_request.jpeg)
+
 
