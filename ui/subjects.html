@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subjects Module</title>
+    <style>
+        body{font-family:Arial; background:#f4f6f9;}
+        table{border-collapse:collapse; width:50%; margin:auto; background:white;}
+        th, td{border:1px solid #ddd; padding:8px; text-align:center;}
+        th{background:#1e3c72; color:white;}
+        button{padding:5px 10px; margin:2px; border:none; border-radius:5px; cursor:pointer;}
+        .add-btn{background:#2a5298; color:white;}
+        .delete-btn{background:#d9534f; color:white;}
+        form{margin-bottom:20px; text-align:center;}
+        input{padding:5px; margin:5px;}
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center; color:#1e3c72;">Subjects Module</h2>
+
+<!-- Add Subject -->
+<form method="POST" action="/add_subject">
+    <input type="text" name="name" placeholder="Subject Name" required>
+    <button class="add-btn" type="submit">Add Subject</button>
+</form>
+
+<!-- Subjects Table -->
+<table>
+    <tr>
+        <th>ID</th><th>Name</th><th>Actions</th>
+    </tr>
+    {% for subject in subjects %}
+    <tr>
+        <td>{{ subject.id }}</td>
+        <td>{{ subject.name }}</td>
+        <td>
+            <button class="delete-btn" onclick="location.href='/delete_subject/{{ subject.id }}'">Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
