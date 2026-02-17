@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Grade</title>
+    <style>
+        body { font-family:Arial; background:#f4f6f9; padding:20px; text-align:center; }
+        input, button { padding:5px; margin:5px; }
+        button { background:#2a5298; color:white; border:none; border-radius:5px; cursor:pointer; }
+        button:hover { background:#16325c; }
+        h1 { color:#1e3c72; }
+    </style>
+</head>
+<body>
+
+<h1>Edit Grade</h1>
+
+<form method="POST">
+    <label>Grade:</label>
+    <input type="number" name="grade" step="0.01" value="{{ grade['grade'] }}" required>
+    <button type="submit">Update</button>
+</form>
+
+<p><a href="/grades">Back to Grades</a></p>
+
+</body>
+</html>
