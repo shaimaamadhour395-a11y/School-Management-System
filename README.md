@@ -184,3 +184,29 @@ reports
 جميع ملفات المشروع موجودة في GitHub Repository.
 
 ---
+
+
+
+---
+
+## 📸 Screenshots
+
+### 📋 Kanban Board (Jira)
+![Kanban Board](screenshots/Kanban%20Board.jpeg)
+
+---
+
+### 🌿 Git Branches
+![Branches](screenshots/branches.jpeg)
+
+---
+
+### 💻 Project Code Structure
+![Code](screenshots/code.jpeg)
+
+---
+
+### 🔀 Pull Request
+![Pull Request](screenshots/pull_request.jpeg)
+
+

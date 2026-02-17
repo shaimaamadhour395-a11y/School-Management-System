@@ -1,37 +1,27 @@
-from database.db import fetch_query
+from db import fetch_query
 
 def show_grades_report():
     """
-    Displays grades report for all students.
+    Generates and prints a report of all grades with student and subject names.
     """
-
     try:
         query = """
-        SELECT students.name, subjects.name, grades.grade_value
+        SELECT students.name AS student_name,
+               subjects.name AS subject_name,
+               grades.grade_value
         FROM grades
         JOIN students ON grades.student_id = students.id
         JOIN subjects ON grades.subject_id = subjects.id
-        ORDER BY students.name
+        ORDER BY students.name, subjects.name
         """
-
         results = fetch_query(query)
 
-        print("\n===== Grades Report =====\n")
-
+        print("===== Grades Report =====")
         if not results:
-            print("No grades found in the system.\n")
+            print("No grades found.")
             return
 
         for row in results:
-            student_name, subject_name, grade_value = row
-            print(f"Student: {student_name}")
-            print(f"Subject: {subject_name}")
-            print(f"Grade: {grade_value}")
-            print("------------------------")
-
+            print(f"Student: {row['student_name']} | Subject: {row['subject_name']} | Grade: {row['grade_value']}")
     except Exception as e:
         print("Error generating grades report:", e)
-
-
-if __name__ == "__main__":
-    show_grades_report()

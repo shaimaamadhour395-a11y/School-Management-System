@@ -1,24 +1,16 @@
-import sqlite3
+from db import execute_query
 
-def update_grade():
-    conn = sqlite3.connect("school.db")
-    cursor = conn.cursor()
-
-    grade_id = int(input("Enter grade ID to update: "))
-    new_grade = float(input("Enter new grade: "))
-
-    cursor.execute(
-        "UPDATE grades SET grade = ? WHERE id = ?",
-        (new_grade, grade_id)
-    )
-
-    if cursor.rowcount == 0:
-        print("No grade found with that ID.")
-    else:
-        print("Grade updated successfully!")
-
-    conn.commit()
-    conn.close()
-
-if __name__ == "__main__":
-    update_grade()
+def update_grade(grade_id, new_grade_value):
+    """
+    Updates the value of an existing grade.
+    """
+    try:
+        query = """
+        UPDATE grades
+        SET grade_value = ?
+        WHERE id = ?
+        """
+        execute_query(query, (new_grade_value, grade_id))
+        print("Grade updated successfully.")
+    except Exception as e:
+        print("Error updating grade:", e)

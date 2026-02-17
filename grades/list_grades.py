@@ -1,29 +1,27 @@
-import sqlite3
+from db import fetch_query
 
 def list_grades():
-    conn = sqlite3.connect("school.db")
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        SELECT students.name AS student_name,
-               subjects.name AS subject_name,
-               grades.grade
+    """
+    Displays all grades with student and subject names.
+    """
+    try:
+        query = """
+        SELECT grades.id,
+               students.name,
+               subjects.name,
+               grades.grade_value
         FROM grades
         JOIN students ON grades.student_id = students.id
         JOIN subjects ON grades.subject_id = subjects.id
-    """)
+        """
+        results = fetch_query(query)
 
-    rows = cursor.fetchall()
+        print("===== Grades List =====")
+        if not results:
+            print("No grades found.")
+            return
 
-    if not rows:
-        print("No grades found.")
-    else:
-        print("Grades Report:\n")
-        for row in rows:
-            print(f"{row['student_name']} - {row['subject_name']} : {row['grade']}")
-
-    conn.close()
-
-if __name__ == "__main__":
-    list_grades()
+        for row in results:
+            print(f"ID: {row[0]} | Student: {row[1]} | Subject: {row[2]} | Grade: {row[3]}")
+    except Exception as e:
+        print("Error retrieving grades:", e)
