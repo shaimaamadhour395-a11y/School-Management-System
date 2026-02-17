@@ -184,3 +184,21 @@ reports
 جميع ملفات المشروع موجودة في GitHub Repository.
 
 ---
+
+
+
+## 📸 Screenshots
+
+### 📊 Grades Report
+![Grades Report](screenshots/grades_report.png)
+
+---
+
+### 📅 Attendance Report
+![Attendance Report](screenshots/attendance_report.png)
+
+---
+
+### 🗄 Database Tables
+![Database Tables](screenshots/database_tables.png)
+
